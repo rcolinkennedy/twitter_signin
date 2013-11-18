@@ -2,8 +2,8 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <% if current_user %>
-	Signed in as <%= current_user.name %>!
-  	<%= link_to "Sign out", signout_path %>
+  Signed in as <%= current_user.name %>!
+  <%= link_to "Sign out", signout_path %>
 <% else %>
-	<%= link_to "Sign in with Twitter", "auth/twitter" %>
+  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
 <% end %>
