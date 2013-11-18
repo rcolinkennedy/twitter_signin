@@ -1,6 +1,12 @@
 TwitterSignin::Application.routes.draw do
+  root to: 'home#index'
   get "user/register"
-  get "session/create"
+  
+  get 'auth/twitter/callback', to: 'session#create'
+  get 'auth/failure', to: redirect('/')
+  
+  get 'signout', to: 'session#destroy', as: 'signout'
+  
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
